@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Exercises\HelloTriangle">
       <UniqueIdentifier>{983ddadf-9605-4092-8e3e-c2880a591251}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Exercises\Shaders">
+      <UniqueIdentifier>{ff45df11-8081-4142-957d-9ff31e0041e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -27,14 +30,12 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HelloTriangle.cpp">
+    <ClCompile Include="HelloTriangle_Main.cpp">
       <Filter>Source Files\Exercises\HelloTriangle</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Shader.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
+    <ClCompile Include="Shaders_Main.cpp">
+      <Filter>Source Files\Exercises\Shaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs">
@@ -43,5 +44,19 @@
     <None Include="shader.vs">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="Shader_shader.fs">
+      <Filter>Source Files\Exercises\Shaders</Filter>
+    </None>
+    <None Include="Shaders_shader.vs">
+      <Filter>Source Files\Exercises\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders_Shader.h">
+      <Filter>Source Files\Exercises\Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
