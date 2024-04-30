@@ -4,7 +4,8 @@
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
-unsigned int createShaderProgram();
+unsigned int createShaderProgram(const char* fragmentShaderSource);
+unsigned int createVAO(float verticies[], int vertexSize, unsigned int indices[], int indexSize);
 
 const char* vertexShaderSource = "#version 330 core\n"
 	"layout (location = 0) in vec3 aPos;\n"
@@ -13,14 +14,21 @@ const char* vertexShaderSource = "#version 330 core\n"
 	"	gl_Position=vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
 	"}\0";
 
-const char* fragmentShaderSource = "#version 330 core\n"
+const char* orangeFragmentShaderSource = "#version 330 core\n"
 	"out vec4 FragColor;\n"
 	"void main() \n"
 	"{\n"
 	"	FragColor=vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
 	"}\n";
 
+const char* yellowFragmentShaderSource = "#version 330 core\n"
+	"out vec4 FragColor;\n"
+	"void main() \n" 
+	"{\n"
+	"	FragColor=vec4(1.0f, 1.0f, 0.5f, 1.0f);\n"
+	"}\n";
 
+// Does exercises 1, 2 and 3 together
 int main()
 {
 
@@ -46,42 +54,27 @@ int main()
 		return -1;
 	}
 
-	unsigned int shaderProgram = createShaderProgram();
+	unsigned int yellowShaderProgram = createShaderProgram(yellowFragmentShaderSource);
+	unsigned int orangeShaderProgram = createShaderProgram(orangeFragmentShaderSource);
 
-	// Create virtual array object,
-	// virtual buffer object,
-	// element buffer object
-	unsigned int VAO, VBO, EBO;
-	glGenVertexArrays(1 ,&VAO);
-	glGenBuffers(1, &VBO);
-	glGenBuffers(1, &EBO);
-
-	// VAO stores all the other operations
-	// done for VBO and EBO, so bind first
-	glBindVertexArray(VAO);
 
 	float verticies[] = {
-		0.5f, 0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		-0.5f, -0.5f, 0.0f,
-		-0.5f, 0.5f, 0.0f
+		0.0f, 0.5f, 0.0f,
+		0.0f, -0.5f, 0.0f,
+		-0.5f, 0.0f, 0.0f,
+		0.5f, 0.0f, 0.0f,
 	};
 
-	unsigned int indices[] = {
+	unsigned int indices1[] = {
+		0,1,2,
+	};
+
+	unsigned int indices2[] = {
 		0,1,3,
-		1,2,3
 	};
 
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(verticies), verticies, GL_STATIC_DRAW);
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
-
+	unsigned int VAO1 = createVAO(verticies, 24, indices1, 6);
+	unsigned int VAO2 = createVAO(verticies, 24, indices2, 6);
 
 	while (!glfwWindowShouldClose(window)) 
 	{
@@ -93,9 +86,13 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// draw the actual objects
-		glUseProgram(shaderProgram);
+		glUseProgram(orangeShaderProgram);
+		glBindVertexArray(VAO1);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+		glUseProgram(yellowShaderProgram);
 		// This is the only thing we need to bind because VBOs, and EBOs, are stored by the VAO
-		glBindVertexArray(VAO); 
+		glBindVertexArray(VAO2);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		//check and call events and swap buffers
@@ -121,7 +118,7 @@ void processInput(GLFWwindow* window)
 	}
 }
 
-unsigned int createShaderProgram()
+unsigned int createShaderProgram(const char *fragmentShaderSource)
 {
 	// Create vertex shader
 	unsigned int vertexShader;
@@ -167,4 +164,30 @@ unsigned int createShaderProgram()
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 	return shaderProgram;
+}
+
+unsigned int createVAO(float verticies[], int vertexSize, unsigned int indices[], int indexSize)
+{
+	// Create virtual array object,
+	// virtual buffer object,
+	// element buffer object
+	unsigned int VAO, VBO, EBO;
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &EBO);
+
+	// VAO stores all the other operations
+	// done for VBO and EBO, so bind first
+	glBindVertexArray(VAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(&verticies)*vertexSize, verticies, GL_STATIC_DRAW);
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(&indices)*indexSize, indices, GL_STATIC_DRAW);
+
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	return VAO;
 }
