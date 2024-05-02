@@ -9,7 +9,7 @@ void processInput(GLFWwindow* window);
 unsigned int createShaderProgram(const char* fragmentShaderSource);
 unsigned int createVAO(float verticies[], int vertexSize, unsigned int indices[], int indexSize);
 
-
+// Implements exercises 1 and 2
 int main()
 {
 	glfwInit();
@@ -73,8 +73,8 @@ int main()
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	data = stbi_load("awesomeface.png", &width, &height, &nrChannels, 0);
 	if (data)
@@ -91,10 +91,10 @@ int main()
 
 
 	float verticies[] = {
-		0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-		0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 2.0f, 2.0f,
+		0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 2.0f, 0.0f,
 		-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		-0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 2.0f,
 	};
 
 	unsigned int indices1[] = {
@@ -111,8 +111,6 @@ int main()
 	customShader.setInt("texture1", 0);
 	customShader.setInt("texture2", 1);
 
-	float blend = 0.0f;
-
 	while (!glfwWindowShouldClose(window))
 	{
 		//input
@@ -122,17 +120,9 @@ int main()
 		glClearColor(0.1f, 0.1f, 1.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
-		{
-			blend += 0.01f/60.0f;
-		}
-
-		if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
-		{
-			blend -= 0.01f/60.0f;
-		}
-
-		customShader.setFloat("blend", blend);
+		// Get the uniform value
+		float timeValue = glfwGetTime();
+		float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
 
 		// draw the actual objects
 		glActiveTexture(GL_TEXTURE0);

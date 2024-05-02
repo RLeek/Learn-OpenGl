@@ -30,19 +30,46 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exercises\HelloTriangle\HelloTriangle_Main.cpp">
+    <ClCompile Include="Exercises\HelloTriangle\Main.cpp">
       <Filter>Source Files\Exercises\HelloTriangle</Filter>
     </ClCompile>
-    <ClCompile Include="Exercises\Shaders\Shaders_Main.cpp">
+    <ClCompile Include="Exercises\Shaders\Main.cpp">
       <Filter>Source Files\Exercises\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="Exercises\HelloTriangle\HelloTriangle_glad.c">
+    <ClCompile Include="Exercises\HelloTriangle\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exercises\Shaders\Shaders_glad.c">
+    <ClCompile Include="Exercises\Shaders\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex12\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex12\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex12\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex3\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex3\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex3\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex4\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex4\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Textures\Ex4\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,21 +80,45 @@
     <None Include="shader.vs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Exercises\Shaders\Shaders_shader.fs">
+    <None Include="Exercises\Shaders\shader.fs">
       <Filter>Source Files\Exercises\Shaders</Filter>
     </None>
-    <None Include="Exercises\Shaders\Shaders_shader.vs">
+    <None Include="Exercises\Shaders\shader.vs">
       <Filter>Source Files\Exercises\Shaders</Filter>
     </None>
+    <None Include="Exercises\Textures\Ex12\shader.fs" />
+    <None Include="Exercises\Textures\Ex12\shader.vs" />
+    <None Include="Exercises\Textures\Ex3\shader.fs" />
+    <None Include="Exercises\Textures\Ex3\shader.vs" />
+    <None Include="Exercises\Textures\Ex4\shader.fs" />
+    <None Include="Exercises\Textures\Ex4\shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Exercises\Shaders\Shaders_Shader.h">
+    <ClInclude Include="Exercises\Shaders\Shader.h">
       <Filter>Source Files\Exercises\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Textures\Ex12\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Textures\Ex12\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Textures\Ex3\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Textures\Ex3\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Textures\Ex4\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Textures\Ex4\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -76,6 +127,24 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Textures\Ex12\awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Textures\Ex12\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Textures\Ex3\awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Textures\Ex3\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Textures\Ex4\awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Textures\Ex4\container.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
