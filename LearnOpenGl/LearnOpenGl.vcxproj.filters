@@ -30,11 +30,20 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HelloTriangle_Main.cpp">
+    <ClCompile Include="Exercises\HelloTriangle\HelloTriangle_Main.cpp">
       <Filter>Source Files\Exercises\HelloTriangle</Filter>
     </ClCompile>
-    <ClCompile Include="Shaders_Main.cpp">
+    <ClCompile Include="Exercises\Shaders\Shaders_Main.cpp">
       <Filter>Source Files\Exercises\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\HelloTriangle\HelloTriangle_glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Shaders\Shaders_glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,10 +53,10 @@
     <None Include="shader.vs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Shader_shader.fs">
+    <None Include="Exercises\Shaders\Shaders_shader.fs">
       <Filter>Source Files\Exercises\Shaders</Filter>
     </None>
-    <None Include="Shaders_shader.vs">
+    <None Include="Exercises\Shaders\Shaders_shader.vs">
       <Filter>Source Files\Exercises\Shaders</Filter>
     </None>
   </ItemGroup>
@@ -55,8 +64,19 @@
     <ClInclude Include="Shader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Shaders_Shader.h">
+    <ClInclude Include="Exercises\Shaders\Shaders_Shader.h">
       <Filter>Source Files\Exercises\Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
