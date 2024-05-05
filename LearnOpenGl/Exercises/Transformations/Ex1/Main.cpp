@@ -12,6 +12,12 @@ void processInput(GLFWwindow* window);
 unsigned int createShaderProgram(const char* fragmentShaderSource);
 unsigned int createVAO(float verticies[], int vertexSize, unsigned int indices[], int indexSize);
 
+// Ex1: The container rotates across the screen
+// rather than in a static position. The reason
+// for this is that rotation changes the transform direction 
+// so as the rotation varies the transform direction varies 
+// in tandem, resulting in the whole container rotating across
+// the screen rather than at a single point
 int main()
 {
 	glfwInit();
@@ -115,13 +121,6 @@ int main()
 	
 	float blend = 0.2f;
 
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture1);
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, texture2);
-	glBindVertexArray(VAO1);
-
-
 	while (!glfwWindowShouldClose(window))
 	{
 		//input
@@ -135,8 +134,8 @@ int main()
 		customShader.setFloat("blend", blend);
 		
 		glm::mat4 trans = glm::mat4(1.0f);
-		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
 		trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
 
 		// This is also just setting a value
 		// We haven't written a helper function for it yet though,
@@ -145,17 +144,12 @@ int main()
 
 
 		// draw the actual objects
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, texture1);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, texture2);
+		glBindVertexArray(VAO1);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		
-		// set new transform
-		trans = glm::mat4(1.0f);
-		trans = glm::translate(trans, glm::vec3(-0.5f, 0.5f, 0.0f));
-		float time = (float)glfwGetTime();
-		trans = glm::scale(trans, glm::vec3(glm::sin(time), glm::sin(time), 1.0f));
-
-		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
 
 		//check and call events and swap buffers
 		glfwPollEvents();

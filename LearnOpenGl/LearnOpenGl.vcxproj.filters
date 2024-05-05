@@ -72,6 +72,24 @@
     <ClCompile Include="Exercises\Textures\Ex4\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercises\Transformations\Ex1\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Transformations\Ex1\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Transformations\Ex1\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Transformations\Ex2\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Transformations\Ex2\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Transformations\Ex2\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs">
@@ -92,6 +110,10 @@
     <None Include="Exercises\Textures\Ex3\shader.vs" />
     <None Include="Exercises\Textures\Ex4\shader.fs" />
     <None Include="Exercises\Textures\Ex4\shader.vs" />
+    <None Include="Exercises\Transformations\Ex1\shader.fs" />
+    <None Include="Exercises\Transformations\Ex1\shader.vs" />
+    <None Include="Exercises\Transformations\Ex2\shader.fs" />
+    <None Include="Exercises\Transformations\Ex2\shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -121,6 +143,18 @@
     <ClInclude Include="Exercises\Textures\Ex4\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Exercises\Transformations\Ex1\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Transformations\Ex1\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Transformations\Ex2\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Transformations\Ex2\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="container.jpg">
@@ -145,6 +179,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Exercises\Textures\Ex4\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Transformations\Ex1\awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Transformations\Ex1\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Transformations\Ex2\awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Transformations\Ex2\container.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
