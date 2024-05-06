@@ -218,8 +218,10 @@
     <None Include="Exercises\Transformations\Ex2\shader.vs">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </None>
-    <None Include="shader.fs" />
-    <None Include="shader.vs" />
+    <None Include="lightingCubeShader.fs" />
+    <None Include="lightingCubeShader.vs" />
+    <None Include="lightingShader.fs" />
+    <None Include="lightingShader.vs" />
     <None Include="Exercises\Shaders\shader.vs">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </None>
@@ -228,8 +230,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="awesomeface.png" />
-    <Image Include="container.jpg" />
     <Image Include="Exercises\Camera\Ex1\awesomeface.png">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Image>

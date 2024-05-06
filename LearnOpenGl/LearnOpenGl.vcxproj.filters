@@ -119,10 +119,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.fs">
+    <None Include="lightingShader.fs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="shader.vs">
+    <None Include="lightingShader.vs">
       <Filter>Source Files</Filter>
     </None>
     <None Include="Exercises\Shaders\shader.fs">
@@ -147,6 +147,8 @@
     <None Include="Exercises\Camera\Ex1\shader.vs" />
     <None Include="Exercises\Camera\Ex2\shader.fs" />
     <None Include="Exercises\Camera\Ex2\shader.vs" />
+    <None Include="lightingCubeShader.fs" />
+    <None Include="lightingCubeShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -217,12 +219,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="container.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="awesomeface.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Exercises\Textures\Ex12\awesomeface.png">
       <Filter>Resource Files</Filter>
     </Image>
