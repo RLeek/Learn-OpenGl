@@ -27,6 +27,19 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+// Exercise 4:
+// Gouraud shading looks strange because instead of each individual fragments 
+// color being determined in the fragment shader, the vertex shader determines the 
+// color and this is interpolated across the fragments. This causes more inaccurate
+// lighting and artifacts as colors are interpolated at a smooth and constant rate,
+// even if the colors do not actually change at a smooth and constant rate. It also has
+// the effect that vertexes are the brightest/darkest areas as every other color 
+// is between these colors. This can most easily be seen with the specular 
+// highlights that result in a bright triangle instead of a circle, as the vertex
+// of the triangle is the brightest value which is then smoothly interpolated to 
+// the other vertexes. This allows you to see the 'seams' of the object based on the
+// vertices, even though this shouldn't be desirable.
+
 int main()
 {
 	glfwInit();

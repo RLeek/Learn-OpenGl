@@ -27,6 +27,17 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+// Exercise 2:
+// Changing the ambient value does what is expected and largely results in cubes to be more visible
+// in the darkness or less visible.
+// Changing the diffuse strength has the effect of changing the light intensity, with lower values
+// resulting in less strong light and higher values resulting in stronger light.
+// Changing the specular strength has the effect of changing how bright the specular light is, with
+// lower values resulting in a less bright specular spot and higher values resulting in a more defined
+// one.
+// Higher shininess values increase the drop-off of the specular light, whilst lower values decrease it,
+// meaning a more shiny object has a more defined specular highlight. This makes sense because a shiny object
+// bounces more light rays around towards the opposite angle instead of scattering it around.
 int main()
 {
 	glfwInit();
@@ -191,13 +202,14 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
 		view = camera.GetViewMatrix();
-		viewLoc = glGetUniformLocation(lightCubeShader.ID, "view");
+		viewLoc = glGetUniformLocation(lightingShader.ID, "view");
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
 		projection = glm::mat4(1.0f);
 		projection = glm::perspective(glm::radians(camera.Zoom), 800.0f / 600.0f, 0.1f, 100.0f);
-		projectionLoc = glGetUniformLocation(lightCubeShader.ID, "projection");
+		projectionLoc = glGetUniformLocation(lightingShader.ID, "projection");
 		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
 
 		glBindVertexArray(VAO2);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
