@@ -117,15 +117,6 @@
     <ClCompile Include="Exercises\Basic-lighting\Ex12\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stb_image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Exercises\Basic-lighting\Ex4\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -133,6 +124,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Exercises\Basic-lighting\Ex4\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -163,16 +163,16 @@
     <None Include="Exercises\Basic-lighting\Ex12\lightingCubeShader.vs" />
     <None Include="Exercises\Basic-lighting\Ex12\lightingShader.fs" />
     <None Include="Exercises\Basic-lighting\Ex12\lightingShader.vs" />
-    <None Include="lightingCubeShader.fs" />
-    <None Include="lightingCubeShader.vs" />
-    <None Include="lightingShader.fs" />
-    <None Include="lightingShader.vs" />
     <None Include="Exercises\Basic-lighting\Ex4\lightingCubeShader.fs" />
     <None Include="Exercises\Basic-lighting\Ex4\lightingCubeShader.vs" />
     <None Include="Exercises\Basic-lighting\Ex4\lightingShader.fs" />
     <None Include="Exercises\Basic-lighting\Ex4\lightingShader.vs" />
     <None Include="Exercises\Basic-lighting\Ex3\lightingShader.fs" />
     <None Include="Exercises\Basic-lighting\Ex3\lightingShader.vs" />
+    <None Include="lightingCubeShader.fs" />
+    <None Include="lightingCubeShader.vs" />
+    <None Include="lightingShader.fs" />
+    <None Include="lightingShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercises\Shaders\Shader.h">
@@ -241,15 +241,6 @@
     <ClInclude Include="Exercises\Basic-lighting\Ex12\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Exercises\Basic-lighting\Ex4\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -260,6 +251,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Exercises\Basic-lighting\Ex3\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

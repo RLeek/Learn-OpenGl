@@ -121,8 +121,12 @@
     <ClCompile Include="Exercises\Shaders\Main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="Exercises\Basic-lighting\Ex12\camera.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
@@ -201,6 +205,8 @@
     <ClInclude Include="Exercises\Shaders\Shader.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Exercises\Basic-lighting\Ex12\lightingCubeShader.fs">
@@ -287,6 +293,10 @@
     <None Include="Exercises\Shaders\shader.fs">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </None>
+    <None Include="lightingCubeShader.fs" />
+    <None Include="lightingCubeShader.vs" />
+    <None Include="lightingShader.fs" />
+    <None Include="lightingShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Exercises\Camera\Ex1\awesomeface.png">

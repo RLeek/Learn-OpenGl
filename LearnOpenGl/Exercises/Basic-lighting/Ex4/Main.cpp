@@ -38,7 +38,7 @@ float lastFrame = 0.0f;
 // highlights that result in a bright triangle instead of a circle, as the vertex
 // of the triangle is the brightest value which is then smoothly interpolated to 
 // the other vertexes. This allows you to see the 'seams' of the object based on the
-// vertices, even though this shouldn't be desirable.
+// vertices, even though this isn't desirable.
 
 int main()
 {
