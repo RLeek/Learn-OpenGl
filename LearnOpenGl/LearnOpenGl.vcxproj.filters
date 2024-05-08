@@ -144,6 +144,15 @@
     <ClCompile Include="Exercises\Materials\Ex1\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercises\Materials\Ex2\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Materials\Ex2\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Materials\Ex2\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Exercises\Shaders\shader.fs">
@@ -186,6 +195,10 @@
     <None Include="Exercises\Materials\Ex1\lightingCubeShader.vs" />
     <None Include="Exercises\Materials\Ex1\lightingShader.fs" />
     <None Include="Exercises\Materials\Ex1\lightingShader.vs" />
+    <None Include="Exercises\Materials\Ex2\lightingCubeShader.fs" />
+    <None Include="Exercises\Materials\Ex2\lightingCubeShader.vs" />
+    <None Include="Exercises\Materials\Ex2\lightingShader.fs" />
+    <None Include="Exercises\Materials\Ex2\lightingShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercises\Shaders\Shader.h">
@@ -284,6 +297,15 @@
     <ClInclude Include="Exercises\Materials\Ex1\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Exercises\Materials\Ex2\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Materials\Ex2\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Materials\Ex2\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Exercises\Textures\Ex12\awesomeface.png">
@@ -332,6 +354,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Exercises\Camera\Ex2\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="container2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="container2_specular.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
