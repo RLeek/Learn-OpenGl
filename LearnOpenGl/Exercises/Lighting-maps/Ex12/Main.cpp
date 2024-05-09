@@ -157,26 +157,10 @@ int main()
 	unsigned int specularMap;
 	glGenTextures(1, &specularMap);
 	glBindTexture(GL_TEXTURE_2D, specularMap);
-	data = stbi_load("lighting_maps_specular_color.png", &width, &height, &nrChannels, 0);
+	data = stbi_load("container2_specular.png", &width, &height, &nrChannels, 0);
 	if (data)
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "Failed to load texture" << std::endl;
-	}
-	stbi_image_free(data);
-
-
-	unsigned int emissionMap;
-	glGenTextures(1, &emissionMap);
-	glBindTexture(GL_TEXTURE_2D, emissionMap);
-	data = stbi_load("matrix.jpg", &width, &height, &nrChannels, 0);
-	if (data)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	else
@@ -216,10 +200,6 @@ int main()
 		lightingShader.setInt("material.specular", 1);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, specularMap);
-
-		lightingShader.setInt("material.emission", 2);
-		glActiveTexture(GL_TEXTURE2);
-		glBindTexture(GL_TEXTURE_2D, emissionMap);
 
 
 		glm::vec3 lightColor;

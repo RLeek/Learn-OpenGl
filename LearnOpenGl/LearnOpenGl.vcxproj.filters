@@ -153,6 +153,15 @@
     <ClCompile Include="Exercises\Materials\Ex2\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercises\Lighting-maps\Ex12\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Lighting-maps\Ex12\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Lighting-maps\Ex12\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Exercises\Shaders\shader.fs">
@@ -199,6 +208,10 @@
     <None Include="Exercises\Materials\Ex2\lightingCubeShader.vs" />
     <None Include="Exercises\Materials\Ex2\lightingShader.fs" />
     <None Include="Exercises\Materials\Ex2\lightingShader.vs" />
+    <None Include="Exercises\Lighting-maps\Ex12\lightingCubeShader.fs" />
+    <None Include="Exercises\Lighting-maps\Ex12\lightingCubeShader.vs" />
+    <None Include="Exercises\Lighting-maps\Ex12\lightingShader.fs" />
+    <None Include="Exercises\Lighting-maps\Ex12\lightingShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercises\Shaders\Shader.h">
@@ -306,6 +319,15 @@
     <ClInclude Include="Exercises\Materials\Ex2\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Exercises\Lighting-maps\Ex12\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Lighting-maps\Ex12\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Lighting-maps\Ex12\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Exercises\Textures\Ex12\awesomeface.png">
@@ -360,6 +382,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="container2_specular.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Lighting-maps\Ex12\container2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Lighting-maps\Ex12\container2_specular.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="lighting_maps_specular_color.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="matrix.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
