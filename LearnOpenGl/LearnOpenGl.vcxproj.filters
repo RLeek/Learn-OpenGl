@@ -162,6 +162,33 @@
     <ClCompile Include="Exercises\Lighting-maps\Ex12\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercises\Lighting-maps\Ex34\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Lighting-maps\Ex34\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Lighting-maps\Ex34\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Light-casters\Ex1-directional-light\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Light-casters\Ex1-directional-light\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Light-casters\Ex1-directional-light\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Light-casters\Ex1-point-light\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Light-casters\Ex1-point-light\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercises\Light-casters\Ex1-point-light\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Exercises\Shaders\shader.fs">
@@ -212,6 +239,18 @@
     <None Include="Exercises\Lighting-maps\Ex12\lightingCubeShader.vs" />
     <None Include="Exercises\Lighting-maps\Ex12\lightingShader.fs" />
     <None Include="Exercises\Lighting-maps\Ex12\lightingShader.vs" />
+    <None Include="Exercises\Lighting-maps\Ex34\lightingCubeShader.fs" />
+    <None Include="Exercises\Lighting-maps\Ex34\lightingCubeShader.vs" />
+    <None Include="Exercises\Lighting-maps\Ex34\lightingShader.fs" />
+    <None Include="Exercises\Lighting-maps\Ex34\lightingShader.vs" />
+    <None Include="Exercises\Light-casters\Ex1-directional-light\lightingCubeShader.fs" />
+    <None Include="Exercises\Light-casters\Ex1-directional-light\lightingCubeShader.vs" />
+    <None Include="Exercises\Light-casters\Ex1-directional-light\lightingShader.fs" />
+    <None Include="Exercises\Light-casters\Ex1-directional-light\lightingShader.vs" />
+    <None Include="Exercises\Light-casters\Ex1-point-light\lightingCubeShader.fs" />
+    <None Include="Exercises\Light-casters\Ex1-point-light\lightingCubeShader.vs" />
+    <None Include="Exercises\Light-casters\Ex1-point-light\lightingShader.fs" />
+    <None Include="Exercises\Light-casters\Ex1-point-light\lightingShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercises\Shaders\Shader.h">
@@ -328,6 +367,33 @@
     <ClInclude Include="Exercises\Lighting-maps\Ex12\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Exercises\Lighting-maps\Ex34\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Lighting-maps\Ex34\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Lighting-maps\Ex34\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Light-casters\Ex1-directional-light\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Light-casters\Ex1-directional-light\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Light-casters\Ex1-directional-light\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Light-casters\Ex1-point-light\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Light-casters\Ex1-point-light\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercises\Light-casters\Ex1-point-light\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Exercises\Textures\Ex12\awesomeface.png">
@@ -390,10 +456,28 @@
     <Image Include="Exercises\Lighting-maps\Ex12\container2_specular.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="lighting_maps_specular_color.png">
+    <Image Include="Exercises\Lighting-maps\Ex34\container2.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="matrix.jpg">
+    <Image Include="Exercises\Lighting-maps\Ex34\container2_specular.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Lighting-maps\Ex34\lighting_maps_specular_color.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Lighting-maps\Ex34\matrix.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Light-casters\Ex1-directional-light\container2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Light-casters\Ex1-directional-light\container2_specular.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Light-casters\Ex1-point-light\container2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Exercises\Light-casters\Ex1-point-light\container2_specular.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -27,6 +27,8 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+// Changing the directional light values do not do much here other than
+// change the direction of the light.
 int main()
 {
 	glfwInit();
@@ -186,10 +188,8 @@ int main()
 		lightingShader.use();
 		lightingShader.setFloat("material.shininess", 16.0f);
 		lightingShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
-		lightingShader.setVec3("light.position", lightPos.x, lightPos.y, lightPos.z);
-		lightingShader.setFloat("light.constant", 1.0f);
-		lightingShader.setFloat("light.linear", 0.09f);
-		lightingShader.setFloat("light.quadratic", -0.032f);
+		// lightingShader.setVec3("light.position", lightPos.x, lightPos.y, lightPos.z);
+		lightingShader.setVec3("light.direction", -0.2f, -1.0f, -0.3f);
 
 		lightingShader.setInt("material.diffuse", 0);
 		glActiveTexture(GL_TEXTURE0);

@@ -27,6 +27,25 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+// Ex1: Changing the different point light values have several effects.
+// Setting the constant value to a smaller value will make it more and 
+// more bright, as 1.0/smaller_value will gradually approach infinite brightness
+// If the constant value is negative, then there is a ring of black, followed by
+// a ring of brightness, as it will approach -infinite brightness, followed by
+// +infinite brightness as the other values grow.
+
+// Setting the linear value to an increasing negative value also a similar effect.
+// It gradually gets brighter, as it results in approaching infinity, but at a
+// large enough negative value it results in a light that goes to +infinite brightness
+// as it approaches 1.0/smaller_value and then becomes negative resulting in -infinite brightness
+// or darkness as the value scales up.
+
+// Setting the quadratic value is similar to the linear value except that it occurs
+// faster. That is, that as it gets smaller, than negative, it will become more bright
+// followed by infinitely bright, then -infinitely bright or darkness, when it becomes negative.
+
+// All of these effects can easily be seen by graphing the attenuation curve.
+
 int main()
 {
 	glfwInit();
@@ -189,7 +208,7 @@ int main()
 		lightingShader.setVec3("light.position", lightPos.x, lightPos.y, lightPos.z);
 		lightingShader.setFloat("light.constant", 1.0f);
 		lightingShader.setFloat("light.linear", 0.09f);
-		lightingShader.setFloat("light.quadratic", -0.032f);
+		lightingShader.setFloat("light.quadratic", 0.032f);
 
 		lightingShader.setInt("material.diffuse", 0);
 		glActiveTexture(GL_TEXTURE0);
