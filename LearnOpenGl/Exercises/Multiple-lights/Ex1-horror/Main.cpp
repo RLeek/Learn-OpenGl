@@ -192,10 +192,10 @@ int main()
 	};
 
 	glm::vec3 pointLightColor[] = {
-		glm::vec3(0.0f,  1.0f,  0.0f),
+		glm::vec3(0.7f,  0.3f,  0.0f),
 		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f,  0.5f, 0.1f),
-		glm::vec3(0.0f,  0.3f, 0.1f)
+		glm::vec3(0.0f,  0.0f, 0.0f),
+		glm::vec3(0.0f,  0.0f, 0.0f)
 	};
 
 
@@ -211,13 +211,13 @@ int main()
 		processInput(window);
 
 		// clear the screen
-		glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
 
 		lightingShader.use();
 		lightingShader.setFloat("material.shininess", 16.0f);
-		lightingShader.setVec3("dirLight.specular", 1.0f, 1.0f, 1.0f);
+		lightingShader.setVec3("dirLight.specular", 0.0f, 0.0f, 0.0f);
 		lightingShader.setVec3("dirLight.direction", 4.0f, -7.0f, 2.0f);
 
 		lightingShader.setInt("material.diffuse", 0);
@@ -229,12 +229,12 @@ int main()
 		glBindTexture(GL_TEXTURE_2D, specularMap);
 
 		glm::vec3 lightColor;
-		lightColor.x =  1.0;
-		lightColor.y =  1.0;
-		lightColor.z =  1.0;
+		lightColor.x =  0;
+		lightColor.y =  0;
+		lightColor.z =  0;
 
-		glm::vec3 diffuseColor = lightColor * glm::vec3(0.9f);
-		glm::vec3 ambientColor = lightColor * glm::vec3(1.0f);
+		glm::vec3 diffuseColor = lightColor * glm::vec3(0.2f);
+		glm::vec3 ambientColor = lightColor * glm::vec3(0.0f);
 
 		lightingShader.setVec3("dirLight.ambient", ambientColor.x, ambientColor.y, ambientColor.z);
 		lightingShader.setVec3("dirLight.diffuse", diffuseColor.x, diffuseColor.y, diffuseColor.z);
@@ -245,11 +245,11 @@ int main()
 
 		lightColor = pointLightColor[0];
 
-		diffuseColor = lightColor * glm::vec3(0.9f);
-		ambientColor = lightColor * glm::vec3(0.1f);
+		diffuseColor = lightColor * glm::vec3(0.2f);
+		ambientColor = lightColor * glm::vec3(0.0f);
 
 		// Set pointLight values
-		lightingShader.setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
+		lightingShader.setVec3("pointLights[0].specular", 0.0f, 0.0f,0.0f);
 		lightingShader.setVec3("pointLights[0].ambient", ambientColor.x, ambientColor.y, ambientColor.z);
 		lightingShader.setVec3("pointLights[0].diffuse", diffuseColor.x, diffuseColor.y, diffuseColor.z);
 		lightingShader.setVec3("pointLights[0].position", pointLightPositions[0].x, pointLightPositions[0].y, pointLightPositions[0].z);
@@ -260,10 +260,10 @@ int main()
 		lightColor = pointLightColor[1];
 
 		diffuseColor = lightColor * glm::vec3(0.2f);
-		ambientColor = lightColor * glm::vec3(0.1f);
+		ambientColor = lightColor * glm::vec3(0.0f);
 
 
-		lightingShader.setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
+		lightingShader.setVec3("pointLights[1].specular", 0.0f, 0.0f, 0.0f);
 		lightingShader.setVec3("pointLights[1].ambient", ambientColor.x, ambientColor.y, ambientColor.z);
 		lightingShader.setVec3("pointLights[1].diffuse", diffuseColor.x, diffuseColor.y, diffuseColor.z);
 		lightingShader.setVec3("pointLights[1].position", pointLightPositions[1].x, pointLightPositions[1].y, pointLightPositions[1].z);
@@ -274,10 +274,10 @@ int main()
 		lightColor = pointLightColor[2];
 
 		diffuseColor = lightColor * glm::vec3(0.2f);
-		ambientColor = lightColor * glm::vec3(0.1f);
+		ambientColor = lightColor * glm::vec3(0.0f);
 
 
-		lightingShader.setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
+		lightingShader.setVec3("pointLights[2].specular", 0.0f, 0.0f, 0.0f);
 		lightingShader.setVec3("pointLights[2].ambient", ambientColor.x, ambientColor.y, ambientColor.z);
 		lightingShader.setVec3("pointLights[2].diffuse", diffuseColor.x, diffuseColor.y, diffuseColor.z);
 		lightingShader.setVec3("pointLights[2].position", pointLightPositions[2].x, pointLightPositions[2].y, pointLightPositions[2].z);
@@ -288,9 +288,9 @@ int main()
 		lightColor = pointLightColor[3];
 
 		diffuseColor = lightColor * glm::vec3(0.2f);
-		ambientColor = lightColor * glm::vec3(0.1f);
+		ambientColor = lightColor * glm::vec3(0.0f);
 
-		lightingShader.setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
+		lightingShader.setVec3("pointLights[3].specular", 0.0f, 0.0f, 0.0f);
 		lightingShader.setVec3("pointLights[3].ambient", ambientColor.x, ambientColor.y, ambientColor.z);
 		lightingShader.setVec3("pointLights[3].diffuse", diffuseColor.x, diffuseColor.y, diffuseColor.z);
 		lightingShader.setVec3("pointLights[3].position", pointLightPositions[3].x, pointLightPositions[3].y, pointLightPositions[3].z);
@@ -302,7 +302,7 @@ int main()
 		lightColor = glm::vec3(1.0);
 
 		diffuseColor = lightColor * glm::vec3(0.7f);
-		ambientColor = lightColor * glm::vec3(0.1f);
+		ambientColor = lightColor * glm::vec3(0.0f);
 
 		lightingShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
 		lightingShader.setVec3("spotLight.ambient", ambientColor.x, ambientColor.y, ambientColor.z);

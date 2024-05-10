@@ -192,10 +192,10 @@ int main()
 	};
 
 	glm::vec3 pointLightColor[] = {
-		glm::vec3(0.0f,  1.0f,  0.0f),
+		glm::vec3(0.0f,  0.0f,  1.0f),
 		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f,  0.5f, 0.1f),
-		glm::vec3(0.0f,  0.3f, 0.1f)
+		glm::vec3(0.0f,  0.0f, 0.0f),
+		glm::vec3(0.0f,  0.0f, 0.0f)
 	};
 
 
@@ -211,13 +211,13 @@ int main()
 		processInput(window);
 
 		// clear the screen
-		glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
 
 		lightingShader.use();
 		lightingShader.setFloat("material.shininess", 16.0f);
-		lightingShader.setVec3("dirLight.specular", 1.0f, 1.0f, 1.0f);
+		lightingShader.setVec3("dirLight.specular", 0.0f, 0.0f, 0.0f);
 		lightingShader.setVec3("dirLight.direction", 4.0f, -7.0f, 2.0f);
 
 		lightingShader.setInt("material.diffuse", 0);
@@ -229,12 +229,12 @@ int main()
 		glBindTexture(GL_TEXTURE_2D, specularMap);
 
 		glm::vec3 lightColor;
-		lightColor.x =  1.0;
-		lightColor.y =  1.0;
-		lightColor.z =  1.0;
+		lightColor.x =  0;
+		lightColor.y =  0;
+		lightColor.z =  0;
 
-		glm::vec3 diffuseColor = lightColor * glm::vec3(0.9f);
-		glm::vec3 ambientColor = lightColor * glm::vec3(1.0f);
+		glm::vec3 diffuseColor = lightColor * glm::vec3(0.2f);
+		glm::vec3 ambientColor = lightColor * glm::vec3(0.1f);
 
 		lightingShader.setVec3("dirLight.ambient", ambientColor.x, ambientColor.y, ambientColor.z);
 		lightingShader.setVec3("dirLight.diffuse", diffuseColor.x, diffuseColor.y, diffuseColor.z);

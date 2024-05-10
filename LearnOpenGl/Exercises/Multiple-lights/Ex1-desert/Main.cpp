@@ -192,10 +192,10 @@ int main()
 	};
 
 	glm::vec3 pointLightColor[] = {
-		glm::vec3(0.0f,  1.0f,  0.0f),
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f,  0.5f, 0.1f),
-		glm::vec3(0.0f,  0.3f, 0.1f)
+		glm::vec3(0.7f,  0.2f,  1.0f),
+		glm::vec3(0.3f, 0.3f, 1.0f),
+		glm::vec3(1.0f,  0.5f, 0.1f),
+		glm::vec3(1.0f,  0.3f, 0.1f)
 	};
 
 
@@ -211,7 +211,7 @@ int main()
 		processInput(window);
 
 		// clear the screen
-		glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
+		glClearColor(0.7f, 0.6f, 0.2f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
 
@@ -229,12 +229,12 @@ int main()
 		glBindTexture(GL_TEXTURE_2D, specularMap);
 
 		glm::vec3 lightColor;
-		lightColor.x =  1.0;
-		lightColor.y =  1.0;
-		lightColor.z =  1.0;
+		lightColor.x =  1;
+		lightColor.y =  1;
+		lightColor.z =  1;
 
-		glm::vec3 diffuseColor = lightColor * glm::vec3(0.9f);
-		glm::vec3 ambientColor = lightColor * glm::vec3(1.0f);
+		glm::vec3 diffuseColor = lightColor * glm::vec3(0.2f);
+		glm::vec3 ambientColor = lightColor * glm::vec3(0.1f);
 
 		lightingShader.setVec3("dirLight.ambient", ambientColor.x, ambientColor.y, ambientColor.z);
 		lightingShader.setVec3("dirLight.diffuse", diffuseColor.x, diffuseColor.y, diffuseColor.z);
@@ -245,7 +245,7 @@ int main()
 
 		lightColor = pointLightColor[0];
 
-		diffuseColor = lightColor * glm::vec3(0.9f);
+		diffuseColor = lightColor * glm::vec3(0.2f);
 		ambientColor = lightColor * glm::vec3(0.1f);
 
 		// Set pointLight values
