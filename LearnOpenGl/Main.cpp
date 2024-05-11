@@ -198,10 +198,10 @@ int main()
 	};
 
 	glm::vec3 pointLightColor[] = {
-		glm::vec3(0.0f,  1.0f,  0.0f),
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f,  0.5f, 0.1f),
-		glm::vec3(0.0f,  0.3f, 0.1f)
+		glm::vec3(0.0f,  1.0f,  0.5f),
+		glm::vec3(1.0f, 0.0f, 1.0f),
+		glm::vec3(0.7f,  0.5f, 1.0f),
+		glm::vec3(1.0f,  0.2f, 0.1f)
 	};
 
 	Model guitarModel = Model(string("backpack/backpack.obj"));
@@ -218,7 +218,7 @@ int main()
 		processInput(window);
 
 		// clear the screen
-		glClearColor(0.1f, 0.1f, 0.1f, 0.1f);
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
 
@@ -240,7 +240,7 @@ int main()
 		lightColor.y =  1.0;
 		lightColor.z =  1.0;
 
-		glm::vec3 diffuseColor = lightColor * glm::vec3(0.7f);
+		glm::vec3 diffuseColor = lightColor * glm::vec3(0.3f);
 		glm::vec3 ambientColor = lightColor * glm::vec3(0.1f);
 
 		lightingShader.setVec3("dirLight.ambient", ambientColor.x, ambientColor.y, ambientColor.z);
@@ -308,7 +308,7 @@ int main()
 		// spot light
 		lightColor = glm::vec3(1.0);
 
-		diffuseColor = lightColor * glm::vec3(0.7f);
+		diffuseColor = lightColor * glm::vec3(0.6f);
 		ambientColor = lightColor * glm::vec3(0.1f);
 
 		lightingShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
@@ -371,7 +371,7 @@ int main()
 		lightColor.y = 1.0;
 		lightColor.z = 1.0;
 
-		diffuseColor = lightColor * glm::vec3(0.7f);
+		diffuseColor = lightColor * glm::vec3(0.3f);
 		ambientColor = lightColor * glm::vec3(0.1f);
 
 		modelShader.setVec3("dirLight.ambient", ambientColor.x, ambientColor.y, ambientColor.z);
@@ -383,8 +383,8 @@ int main()
 
 		lightColor = pointLightColor[0];
 
-		diffuseColor = lightColor * glm::vec3(0.5f);
-		ambientColor = lightColor * glm::vec3(0.1f);
+		diffuseColor = lightColor * glm::vec3(0.0f);
+		ambientColor = lightColor * glm::vec3(0.0f);
 
 		// Set pointLight values
 		modelShader.setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
@@ -439,7 +439,7 @@ int main()
 		// spot light
 		lightColor = glm::vec3(1.0);
 
-		diffuseColor = lightColor * glm::vec3(0.9f);
+		diffuseColor = lightColor * glm::vec3(0.6f);
 		ambientColor = lightColor * glm::vec3(0.1f);
 
 		modelShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
@@ -464,7 +464,7 @@ int main()
 
 
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(1.0,5.0, 10.0));
+		model = glm::translate(model, glm::vec3(1.0,5.0, -10.0));
 
 		unsigned int modelLoc = glGetUniformLocation(modelShader.ID, "model");
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
