@@ -56,7 +56,8 @@ public:
 				number = std::to_string(specularNr++);
 			}
 
-			shader.setInt(("material." + name + number).c_str(), i);
+			string result = ("material." + name + number).c_str();
+			shader.setInt(result, i);
 			glBindTexture(GL_TEXTURE_2D, textures[i].id);
 		}
 

@@ -318,6 +318,8 @@
     <None Include="Exercises\Multiple-lights\Ex1-biochemical-lab\lightingShader.vs" />
     <None Include="backpack\backpack.mtl" />
     <None Include="packages.config" />
+    <None Include="modelShader.fs" />
+    <None Include="modelShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercises\Shaders\Shader.h">

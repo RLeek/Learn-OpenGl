@@ -632,6 +632,8 @@
     <None Include="lightingCubeShader.vs" />
     <None Include="lightingShader.fs" />
     <None Include="lightingShader.vs" />
+    <None Include="modelShader.fs" />
+    <None Include="modelShader.vs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

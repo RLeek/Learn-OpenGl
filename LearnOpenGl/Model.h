@@ -78,15 +78,7 @@ private:
 				vector.x = mesh->mNormals[i].x;
 				vector.y = mesh->mNormals[i].y;
 				vector.z = mesh->mNormals[i].z;
-				vertex.Position = vector;
-
-				if (mesh->HasNormals())
-				{
-					vector.x = mesh->mNormals[i].x;
-					vector.y = mesh->mNormals[i].y;
-					vector.z = mesh->mNormals[i].z;
-					vertex.Normal = vector;
-				}
+				vertex.Normal = vector;
 			}
 
 			// textures
@@ -118,11 +110,11 @@ private:
 		if (mesh->mMaterialIndex >= 0) 
 		{
 			aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+
 			vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
-
 			textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
-			vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 
+			vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 			textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 		}
 
@@ -164,6 +156,7 @@ private:
 
 unsigned int TextureFromFile(const char* path, const string& directory, bool gamma)
 {
+	stbi_set_flip_vertically_on_load(true);
 	string filename = string(path);
 	filename = directory + '/' + filename;
 
