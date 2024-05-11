@@ -5,3 +5,6 @@
 /x64/Debug
 /.vs
 /LearnOpenGl/x64/Debug
+/packages/Assimp.3.0.0
+/packages/Assimp.redist.3.0.0/build
+/packages/Assimp.redist.3.0.0

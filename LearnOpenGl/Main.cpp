@@ -7,6 +7,9 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "camera.h"
+#include <vector>
+#include "Model.h"
+using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -198,6 +201,7 @@ int main()
 		glm::vec3(0.0f,  0.3f, 0.1f)
 	};
 
+	Model model = Model(string("backpack/backpack.obj"));
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -313,7 +317,6 @@ int main()
 		lightingShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(20.0f)));
 
 
-
 		glBindVertexArray(VAO1);
 
 		// Set Projection
@@ -344,6 +347,9 @@ int main()
 
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
+
+
+		model.Draw(lightingShader);
 
 
 		glBindVertexArray(VAO2);
